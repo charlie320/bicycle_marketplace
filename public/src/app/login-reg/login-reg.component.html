@@ -32,14 +32,15 @@
           <h3>Login</h3>
           <form (submit)="loginUser()">
             <div class="form-group row">
-              <label for="mail" class="col-sm-3 col-form-label">Email</label>
+              <label for="email" class="col-sm-3 col-form-label">Email</label>
               <div class="col-sm-9">
                 <input
-                type="email"
+                id="email"
                 name="email"
+                type="text"
                 class="form-control"
-                id="inputEmail"
                 placeholder="Email"
+                #email="ngModel"
                 [(ngModel)]="ninja.email"
                 >
               </div>
@@ -53,6 +54,7 @@
                 class="form-control"
                 id="inputPassword"
                 placeholder="Password"
+                #password="ngModel"
                 [(ngModel)]="ninja.password"
                 >
               </div>
@@ -64,7 +66,7 @@
 
         <div class="col-md-6">
           <h3>Register</h3>
-          <form id="register-form" #myForm="ngForm" (submit)="createUser(); myform.reset()">
+          <form id="register-form" #regForm="ngForm" (submit)="createUser(); regForm.reset()">
               <div class="form-group row">
                 <label for="inputFirstName" class="col-sm-3 col-form-label">First Name</label>
                 <div class="col-sm-9">
@@ -78,6 +80,14 @@
                   placeholder="First Name"
                   required
                   minlength='2'>
+                  <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+                    <div *ngIf="firstName.errors.required">
+                      First Name is required.
+                    </div>
+                    <div *ngIf="firstName.errors.minlength">
+                      First Name must be at least 2 characters long.
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
@@ -93,6 +103,14 @@
                   placeholder="Last Name"
                   required
                   minlength='2'>
+                  <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+                    <div *ngIf="lastName.errors.required">
+                      Last Name is required.
+                    </div>
+                    <div *ngIf="lastName.errors.minlength">
+                      Last Name must be at least 2 characters long.
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
@@ -107,6 +125,11 @@
                   [(ngModel)]="newUser.email"
                   placeholder="Email"
                   required>
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                    <div *ngIf="email.errors.required">
+                      Email is required
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
@@ -123,6 +146,14 @@
                   minlength='8'
                   placeholder="Password must be at least 8 characters"
                   />
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required">
+                      Password is required.
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                      Password must be at least 8 characters long.
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
@@ -135,12 +166,17 @@
                   name="password_confirmation"
                   #password_confirmation="ngModel"
                   [(ngModel)]="newUser.password_confirmation"
-                  required
                   placeholder="Password Confirmation"
+                  required
                   />
+                  <div *ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)" class="alert alert-danger">
+                    <div *ngIf="password_confirmation.errors.required">
+                      Password Confirmation is required.
+                    </div>
+                  </div>
                 </div>
               </div>
-              <input type="submit" class="btn btn-secondary" value="Register">
+              <input type="submit" class="btn btn-secondary" value="Register" [disabled]="!regForm.valid">
           </form>
           <div>
             <p *ngFor="let error of errors">{{ error }}</p>

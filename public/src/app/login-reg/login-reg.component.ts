@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../user';
 import { Post } from '../post';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login-reg',
