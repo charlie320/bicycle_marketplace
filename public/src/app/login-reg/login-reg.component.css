@@ -3,7 +3,7 @@ section {
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 25px;
-  background-color: #d7ccc8;
+  background-color: #224;
 }
 
 .post-box {
@@ -15,5 +15,5 @@ section {
 }
 
 #login-reg {
-  background-color: #bcaaa4;
+  background-color: #ddd;
 }

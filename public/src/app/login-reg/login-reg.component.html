@@ -30,9 +30,9 @@
 
         <div class="col-md-6">
           <h3>Login</h3>
-          <form id="login-form" (submit)="loginUser()">
+          <form novalidate id="login-form" #logForm="ngForm" (submit)="loginUser(); logForm.reset()">
             <div class="form-group row">
-              <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+              <label for="mail" class="col-sm-3 col-form-label">Email</label>
               <div class="col-sm-9">
                 <input
                 type="email"
@@ -42,6 +42,7 @@
                 placeholder="Email"
                 [(ngModel)]="ninja.email"
                 >
+                <!-- <span class-"error" aria-live="polite"></span> -->
               </div>
             </div>
             <div class="form-group row">
@@ -54,11 +55,13 @@
                 id="inputPassword"
                 placeholder="Password"
                 [(ngModel)]="ninja.password"
+                required
                 >
               </div>
             </div>
             <input class="btn btn-secondary" type="submit" value="Login">
           </form>
+
         </div>
 
         <div class="col-md-6">
