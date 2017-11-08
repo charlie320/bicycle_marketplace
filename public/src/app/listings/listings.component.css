@@ -32,3 +32,42 @@ button {
 #add-update-submit {
   margin-top: 7px;
 }
+
+.photo-button {
+  border-radius: 5px;
+  border: none;
+  padding: 6px 20px;
+  margin-top: 5px;
+  background-color: #449;
+  color: white;
+}
+
+ .update-button {
+  padding: 6px 20px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 15px;
+  background-color: rgb(48,165,74);
+  color: white;
+  transition: background-color .5s;
+}
+
+.update-button:hover {
+  background-color: #181;
+}
+
+#delete-button {
+  margin-right: 25%;
+  margin-bottom: 10px;
+  padding: 6px 20px;
+  border-radius: 5px;
+  border: none;
+  float: left;
+  background-color: rgb(218,56,73);
+  color: white;
+  transition: background-color .5s;
+}
+
+#delete-button:hover {
+  background-color: #b11;
+}
