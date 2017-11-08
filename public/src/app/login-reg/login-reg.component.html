@@ -30,7 +30,7 @@
 
         <div class="col-md-6">
           <h3>Login</h3>
-          <form novalidate id="login-form" #logForm="ngForm" (submit)="loginUser(); logForm.reset()">
+          <form (submit)="loginUser()">
             <div class="form-group row">
               <label for="mail" class="col-sm-3 col-form-label">Email</label>
               <div class="col-sm-9">
@@ -42,7 +42,6 @@
                 placeholder="Email"
                 [(ngModel)]="ninja.email"
                 >
-                <!-- <span class-"error" aria-live="polite"></span> -->
               </div>
             </div>
             <div class="form-group row">
@@ -55,7 +54,6 @@
                 id="inputPassword"
                 placeholder="Password"
                 [(ngModel)]="ninja.password"
-                required
                 >
               </div>
             </div>

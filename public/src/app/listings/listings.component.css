@@ -5,7 +5,7 @@ button {
 }
 
 .post-box {
-  border: 3px solid #3e2723;
+  border: 3px solid #224;
   margin: 5px;
   border-radius: 5px;
   background-color: white;
@@ -13,15 +13,19 @@ button {
 }
 
 #update-listings {
-  background-color: #bcaaa4;
+  background-color: #111;
   padding: 20px;
-  border: 3px solid #d7ccc8;
+  border: 3px solid #99a;
+}
+
+#update-listings > h1 {
+  color: white;
 }
 
 #create-listing {
-  background-color: #bcaaa4;
+  background-color: #447;
   padding: 20px;
-  border: 3px solid #d7ccc8;
+  border: 3px solid #224;
   margin-bottom: 15px;
 }
 
