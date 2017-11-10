@@ -46,7 +46,8 @@ class PostsController {
         if(err) {
           return res.json(err);
         }
-        path = `/Users/Charlie/Documents/Programming/programming_labs_projects/js_mean/bicycle_marketplace_bootstrap/server/uploads/${post.photo}`;
+        path = DIR + `/${post.photo}`;
+        console.log(path);
       // });
         Post.findByIdAndUpdate(req.body.post_id, { $set: { photo: req.file.filename } }, {new: true}, (err, post) => {
           if(err) {
