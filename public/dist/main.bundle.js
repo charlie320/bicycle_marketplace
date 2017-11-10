@@ -575,9 +575,9 @@ var LoginRegComponent = (function () {
         this.randomBike = new __WEBPACK_IMPORTED_MODULE_5__post__["a" /* Post */]();
     }
     LoginRegComponent.prototype.ngOnInit = function () {
-        this.ninja.email = 'john@doe.com';
-        this.ninja.password = 'john1234';
-        this.loginUser();
+        // this.ninja.email = 'john@doe.com'
+        // this.ninja.password = 'john1234'
+        // this.loginUser();
         this.getRandomBike();
     };
     LoginRegComponent.prototype.getRandomBike = function () {
