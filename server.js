@@ -5,7 +5,7 @@ const session = require('express-session');
 const port = 8000;
 const app = express();
 
-//middleware- EJS and client/views not necessary for Angular
+//middleware- EJS and client/views-this part not necessary for Angular
 // app.set('view engine', 'ejs');
 // app.set('views', __dirname + '/client/views');
 

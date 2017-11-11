@@ -42,12 +42,10 @@ class PostsController {
         return res.json({ status: 'Cound not save file'});
       }
       Post.findById(req.body.post_id, (err, post) => {
-        console.log(post._id);
         if(err) {
           return res.json(err);
         }
-        path = DIR + `/${post.photo}`;
-        console.log(path);
+        path = DIR + `${post.photo}`;
       // });
         Post.findByIdAndUpdate(req.body.post_id, { $set: { photo: req.file.filename } }, {new: true}, (err, post) => {
           if(err) {
@@ -63,7 +61,7 @@ class PostsController {
         });
         return res.json(post);
       });
-    })
+    });
   }
 
   create(req, res){
