@@ -7,7 +7,7 @@ import { Post } from '../post';
 import { NgForm } from '@angular/forms';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
-const URL = 'http://localhost:8000/upload_photo';
+const URL = 'http://localhost:8000/upload_photo';  //***original line
 
 @Component({
   selector: 'app-listings',
@@ -26,7 +26,7 @@ export class ListingsComponent implements OnInit {
   updatedBicycle: Post = new Post();
   user_id: any = null;
 
-  public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
+  public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});  //***original line
 
   constructor(
     private _userService: UserService,
