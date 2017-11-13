@@ -48,7 +48,6 @@ export class ListingsComponent implements OnInit {
     })
     this.forFileUpload();
     this.getPosts();
-
   }
 
   sendUpload(id: any) {
