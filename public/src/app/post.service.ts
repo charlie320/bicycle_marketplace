@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Post } from './post';
 import { Http } from '@angular/http';
 import 'rxjs';
+import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
 @Injectable()
 export class PostService {

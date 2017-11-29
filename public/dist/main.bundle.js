@@ -387,6 +387,7 @@ module.exports = "<app-nav></app-nav>\n\n<section id=\"create-listing\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__post__ = __webpack_require__("../../../../../src/app/post.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_file_upload_ng2_file_upload__ = __webpack_require__("../../../../ng2-file-upload/ng2-file-upload.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_file_upload_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_file_upload_ng2_file_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -403,13 +404,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var URL = 'http://localhost:8000/upload_photo'; //***original line
 var ListingsComponent = (function () {
-    function ListingsComponent(_userService, _postService, _router, _activatedRoute) {
+    function ListingsComponent(_userService, _postService, _router, _activatedRoute, _http) {
         this._userService = _userService;
         this._postService = _postService;
         this._router = _router;
         this._activatedRoute = _activatedRoute;
+        this._http = _http;
         this.currentUser = new __WEBPACK_IMPORTED_MODULE_4__user__["a" /* User */]();
         this.postsOwner = new __WEBPACK_IMPORTED_MODULE_4__user__["a" /* User */]();
         this.posts = [];
@@ -437,6 +440,7 @@ var ListingsComponent = (function () {
         this.getPosts();
     };
     ListingsComponent.prototype.sendUpload = function (id) {
+        console.log("url: ", this.uploader.options.url);
         this.uploader.options.additionalParameter = { 'post_id': id };
         this.uploader.uploadAll();
         this.getPosts();
@@ -503,10 +507,10 @@ ListingsComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/listings/listings.component.html"),
         styles: [__webpack_require__("../../../../../src/app/listings/listings.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__post_service__["a" /* PostService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__post_service__["a" /* PostService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* Http */]) === "function" && _e || Object])
 ], ListingsComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=listings.component.js.map
 
 /***/ }),

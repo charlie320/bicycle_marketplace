@@ -6,6 +6,7 @@ import { User } from '../user';
 import { Post } from '../post';
 import { NgForm } from '@angular/forms';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { Http } from '@angular/http';
 
 const URL = 'http://localhost:8000/upload_photo';  //***original line
 
@@ -32,7 +33,8 @@ export class ListingsComponent implements OnInit {
     private _userService: UserService,
     private _postService: PostService,
     private _router: Router,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private _http: Http
   ) { }
 
   ngOnInit() {
@@ -51,6 +53,7 @@ export class ListingsComponent implements OnInit {
   }
 
   sendUpload(id: any) {
+    console.log("url: ", this.uploader.options.url);
     this.uploader.options.additionalParameter = {'post_id': id};
     this.uploader.uploadAll();
     this.getPosts();
